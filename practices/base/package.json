@@ -1,0 +1,19 @@
+{
+	"name": "base",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "tsc",
+		"dev": "tsx watch src/index.ts"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"type": "module",
+	"devDependencies": {
+		"@types/node": "^26.6.6",
+		"tsx": "^4.23.15"
+	}
+}
