@@ -179,7 +179,34 @@ importers:
         specifier: ^7.0.2
         version: 7.0.2
 
+  practices/agent:
+    devDependencies:
+      '@types/node':
+        specifier: ^26.6.6
+        version: 26.6.6
+      tsx:
+        specifier: ^4.23.15
+        version: 4.23.15
+
+  practices/backend:
+    devDependencies:
+      '@types/node':
+        specifier: ^26.6.6
+        version: 26.6.6
+      tsx:
+        specifier: ^4.23.15
+        version: 4.23.15
+
   practices/base:
+    devDependencies:
+      '@types/node':
+        specifier: ^26.6.6
+        version: 26.6.6
+      tsx:
+        specifier: ^4.23.15
+        version: 4.23.15
+
+  practices/frontend:
     devDependencies:
       '@types/node':
         specifier: ^26.6.6
