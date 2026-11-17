@@ -47,3 +47,20 @@ const createFileIfNotExists = async (filepath: string, content: string) => {
 
 #### 原子写入
 
+```ts
+const atomicWrite = async (filepath: string, data: string | Buffer) => {
+	const dir = path.dirname(filepath)
+	const tempDir = path.join(dir, `.tmp-${randomBytes(8).toString('hex')}`)
+	try {
+		await fs.writeFile(tempDir, data, 'utf-8')
+		await fs.rename(tempDir, filepath)
+	} catch (err) {
+		try {
+			// 清理临时文件
+			await import('node:fs/promises').then((fs) => fs.unlink(tempDir))
+		} catch (error) {}
+		console.log(err)
+	}
+}
+```
+

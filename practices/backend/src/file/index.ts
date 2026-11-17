@@ -1,3 +1,4 @@
+import { randomBytes } from 'node:crypto'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 const tempDir = path.resolve(process.cwd(), 'temp')
@@ -27,6 +28,21 @@ const createFileIfNotExists = async (filepath: string, content: string) => {
 			return false
 		}
 		throw error
+	}
+}
+
+const atomicWrite = async (filepath: string, data: string | Buffer) => {
+	const dir = path.dirname(filepath)
+	const tempDir = path.join(dir, `.tmp-${randomBytes(8).toString('hex')}`)
+	try {
+		await fs.writeFile(tempDir, data, 'utf-8')
+		await fs.rename(tempDir, filepath)
+	} catch (err) {
+		try {
+			// 清理临时文件
+			await import('node:fs/promises').then((fs) => fs.unlink(tempDir))
+		} catch (error) {}
+		console.log(err)
 	}
 }
 
