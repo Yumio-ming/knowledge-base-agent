@@ -1,12 +1,13 @@
 packages:
-  - 'apps/*'
-  - 'packages/*'
-  - 'docs/*'
-  - 'servers/*'
-  - 'practices/*'
+  - "apps/*"
+  - "packages/*"
+  - "docs/*"
+  - "servers/*"
+  - "practices/*"
 
 allowBuilds:
   esbuild: true
   sharp: false
   unrs-resolver: false
-
+  msgpackr-extract: true
+  workerd: true
