@@ -3,7 +3,6 @@ import { headers } from "next/headers";
 import { auth } from "@/utils/auth";
 
 export async function proxy(request: NextRequest) {
-  console.log(111);
   const session = await auth.api.getSession({
     headers: await headers(),
   });
