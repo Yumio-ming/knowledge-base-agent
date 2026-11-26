@@ -1,6 +1,6 @@
 import { Button } from "@yumio/ui/components";
 
-export default async function LoginPage() {
+export default async function SignInPage() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-gray-100">
       <div className="w-full max-w-md rounded-lg bg-white p-8 shadow-md">
